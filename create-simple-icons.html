@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Icon Creator</title>
+</head>
+<body>
+    <h1>Fruit Order App Icons</h1>
+    
+    <!-- 192x192 Icon -->
+    <div style="text-align: center; margin: 20px;">
+        <div id="icon192" style="width: 192px; height: 192px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; display: inline-block; position: relative; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 80px;">🍎</div>
+        </div>
+        <br><br>
+        <button onclick="downloadIcon('icon192', 'logo192.png')">Download 192x192 Icon</button>
+    </div>
+    
+    <!-- 512x512 Icon -->
+    <div style="text-align: center; margin: 20px;">
+        <div id="icon512" style="width: 512px; height: 512px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50px; display: inline-block; position: relative; box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 200px;">🍎</div>
+        </div>
+        <br><br>
+        <button onclick="downloadIcon('icon512', 'logo512.png')">Download 512x512 Icon</button>
+    </div>
+    
+    <script>
+        function downloadIcon(elementId, filename) {
+            const element = document.getElementById(elementId);
+            
+            // Create canvas
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = element.offsetWidth;
+            canvas.height = element.offsetHeight;
+            
+            // Get computed styles
+            const styles = window.getComputedStyle(element);
+            
+            // Draw background
+            ctx.fillStyle = '#667eea';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add gradient effect
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add emoji
+            ctx.font = `${canvas.width * 0.4}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText('🍎', canvas.width/2, canvas.height/2);
+            
+            // Download
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>
