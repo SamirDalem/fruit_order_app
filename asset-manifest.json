@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/SamirDalem/fruit_order_app.git/static/css/main.6d54ed23.css",
-    "main.js": "/SamirDalem/fruit_order_app.git/static/js/main.1ff0f36e.js",
-    "index.html": "/SamirDalem/fruit_order_app.git/index.html",
-    "main.6d54ed23.css.map": "/SamirDalem/fruit_order_app.git/static/css/main.6d54ed23.css.map",
-    "main.1ff0f36e.js.map": "/SamirDalem/fruit_order_app.git/static/js/main.1ff0f36e.js.map"
+    "main.css": "/fruit_order_app/static/css/main.6d54ed23.css",
+    "main.js": "/fruit_order_app/static/js/main.1ff0f36e.js",
+    "index.html": "/fruit_order_app/index.html",
+    "main.6d54ed23.css.map": "/fruit_order_app/static/css/main.6d54ed23.css.map",
+    "main.1ff0f36e.js.map": "/fruit_order_app/static/js/main.1ff0f36e.js.map"
   },
   "entrypoints": [
     "static/css/main.6d54ed23.css",
